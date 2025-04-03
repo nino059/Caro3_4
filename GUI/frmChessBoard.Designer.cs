@@ -37,13 +37,12 @@ namespace Caro3_4.GUI
             label1 = new Label();
             picbMark = new PictureBox();
             txbPlayerName = new TextBox();
-            btnPlayMusic = new Button();
             menuStrip1 = new MenuStrip();
-            menuToolStripMenuItem = new ToolStripMenuItem();
+            mnuChessBoard = new ToolStripMenuItem();
             newGameToolStripMenuItem = new ToolStripMenuItem();
             undoToolStripMenuItem = new ToolStripMenuItem();
             quitToolStripMenuItem = new ToolStripMenuItem();
-            progressBarTimer = new ProgressBar();
+            proTimer = new ProgressBar();
             picChess.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picAvatar).BeginInit();
             panel3.SuspendLayout();
@@ -58,7 +57,7 @@ namespace Caro3_4.GUI
             pnlChessBoard.Location = new Point(14, 39);
             pnlChessBoard.Margin = new Padding(5, 6, 5, 6);
             pnlChessBoard.Name = "pnlChessBoard";
-            pnlChessBoard.Size = new Size(816, 748);
+            pnlChessBoard.Size = new Size(855, 875);
             pnlChessBoard.TabIndex = 0;
             // 
             // picChess
@@ -75,8 +74,7 @@ namespace Caro3_4.GUI
             // 
             picAvatar.BackColor = SystemColors.Control;
             picAvatar.BackgroundImageLayout = ImageLayout.Stretch;
-            picAvatar.Dock = DockStyle.Fill;
-            picAvatar.Location = new Point(0, 0);
+            picAvatar.Location = new Point(-5, 53);
             picAvatar.Margin = new Padding(5, 6, 5, 6);
             picAvatar.Name = "picAvatar";
             picAvatar.Size = new Size(485, 519);
@@ -128,21 +126,10 @@ namespace Caro3_4.GUI
             txbPlayerName.Size = new Size(182, 31);
             txbPlayerName.TabIndex = 0;
             // 
-            // btnPlayMusic
-            // 
-            btnPlayMusic.Location = new Point(663, 850);
-            btnPlayMusic.Margin = new Padding(3, 4, 3, 4);
-            btnPlayMusic.Name = "btnPlayMusic";
-            btnPlayMusic.Size = new Size(182, 46);
-            btnPlayMusic.TabIndex = 6;
-            btnPlayMusic.Text = "Play music";
-            btnPlayMusic.UseVisualStyleBackColor = true;
-            btnPlayMusic.Click += btnPlayMusic_Click;
-            // 
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(24, 24);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { menuToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { mnuChessBoard });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(7, 2, 0, 2);
@@ -150,12 +137,12 @@ namespace Caro3_4.GUI
             menuStrip1.TabIndex = 3;
             menuStrip1.Text = "menuStrip1";
             // 
-            // menuToolStripMenuItem
+            // mnuChessBoard
             // 
-            menuToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { newGameToolStripMenuItem, undoToolStripMenuItem, quitToolStripMenuItem });
-            menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            menuToolStripMenuItem.Size = new Size(73, 29);
-            menuToolStripMenuItem.Text = "Menu";
+            mnuChessBoard.DropDownItems.AddRange(new ToolStripItem[] { newGameToolStripMenuItem, undoToolStripMenuItem, quitToolStripMenuItem });
+            mnuChessBoard.Name = "mnuChessBoard";
+            mnuChessBoard.Size = new Size(73, 29);
+            mnuChessBoard.Text = "Menu";
             // 
             // newGameToolStripMenuItem
             // 
@@ -181,23 +168,22 @@ namespace Caro3_4.GUI
             quitToolStripMenuItem.Text = "Quit";
             quitToolStripMenuItem.Click += quitToolStripMenuItem_Click;
             // 
-            // progressBarTimer
+            // proTimer
             // 
-            progressBarTimer.Location = new Point(918, 580);
-            progressBarTimer.Maximum = 15000;
-            progressBarTimer.Name = "progressBarTimer";
-            progressBarTimer.Size = new Size(314, 34);
-            progressBarTimer.Step = 1;
-            progressBarTimer.Style = ProgressBarStyle.Continuous;
-            progressBarTimer.TabIndex = 7;
+            proTimer.Location = new Point(918, 580);
+            proTimer.Maximum = 15000;
+            proTimer.Name = "proTimer";
+            proTimer.Size = new Size(314, 34);
+            proTimer.Step = 1;
+            proTimer.Style = ProgressBarStyle.Continuous;
+            proTimer.TabIndex = 7;
             // 
-            // FormGame
+            // frmChessBoard
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1607, 1050);
-            Controls.Add(progressBarTimer);
-            Controls.Add(btnPlayMusic);
+            Controls.Add(proTimer);
             Controls.Add(panel3);
             Controls.Add(picChess);
             Controls.Add(pnlChessBoard);
@@ -206,7 +192,7 @@ namespace Caro3_4.GUI
             MainMenuStrip = menuStrip1;
             Margin = new Padding(5, 6, 5, 6);
             MaximizeBox = false;
-            Name = "FormGame";
+            Name = "frmChessBoard";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Caro PvB";
             FormClosing += Form1_FormClosing;
@@ -231,12 +217,11 @@ namespace Caro3_4.GUI
         private System.Windows.Forms.PictureBox picbMark;
         private System.Windows.Forms.TextBox txbPlayerName;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuChessBoard;
         private System.Windows.Forms.ToolStripMenuItem newGameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem undoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
-        private System.Windows.Forms.Button btnPlayMusic;
-        private ProgressBar progressBarTimer;
+        private ProgressBar proTimer;
     }
 }
 

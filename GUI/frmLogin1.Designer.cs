@@ -75,7 +75,7 @@ namespace Caro3_4.GUI
             btnLogin.Margin = new Padding(3, 4, 3, 4);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(254, 45);
-            btnLogin.TabIndex = 5;
+            btnLogin.TabIndex = 0;
             btnLogin.Text = "VÀO CHƠI";
             btnLogin.UseVisualStyleBackColor = true;
             btnLogin.Click += btnLogin_Click;
@@ -89,7 +89,7 @@ namespace Caro3_4.GUI
             btnBack.Margin = new Padding(3, 4, 3, 4);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(254, 45);
-            btnBack.TabIndex = 6;
+            btnBack.TabIndex = 3;
             btnBack.Text = "Thoát";
             btnBack.UseVisualStyleBackColor = true;
             btnBack.Click += btnBack_Click;
@@ -100,10 +100,10 @@ namespace Caro3_4.GUI
             lblLogin1.BackColor = Color.Transparent;
             lblLogin1.Font = new Font("Algerian", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblLogin1.ForeColor = Color.Yellow;
-            lblLogin1.Location = new Point(37, 141);
+            lblLogin1.Location = new Point(37, 131);
             lblLogin1.Name = "lblLogin1";
             lblLogin1.Size = new Size(426, 80);
-            lblLogin1.TabIndex = 1;
+            lblLogin1.TabIndex = 4;
             lblLogin1.Text = "ĐĂNG NHẬP";
             // 
             // frmLogin1

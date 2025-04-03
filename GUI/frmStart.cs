@@ -25,7 +25,7 @@ namespace Caro3_4.GUI
 
         private void btnTwoPlayer_Click(object sender, EventArgs e)
         {
-            Form2Player form2Player = new Form2Player();
+            frmLogin2 form2Player = new frmLogin2();
             form2Player.ShowDialog();
         }
     }

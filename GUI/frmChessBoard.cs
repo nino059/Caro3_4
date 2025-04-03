@@ -25,7 +25,7 @@ namespace Caro3_4.GUI
 
             // *** THAY ĐỔI: Truyền progressBarTimer vào constructor ***
             // Đảm bảo progressBarTimer đã được thêm vào form trong Designer
-            ChessBoardManager = new ChessboardManager(pnlChessBoard, txbPlayerName, picbMark, progressBarTimer, playerOne, playerTwo, numberOfPlayers, level);
+            ChessBoardManager = new ChessboardManager(pnlChessBoard, txbPlayerName, picbMark, proTimer, playerOne, playerTwo, numberOfPlayers, level);
 
             ChessBoardManager.EndedGame += ChessBoard_EndedGame!;
 
