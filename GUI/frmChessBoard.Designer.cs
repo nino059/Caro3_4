@@ -31,100 +31,109 @@ namespace Caro3_4.GUI
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChessBoard));
             pnlChessBoard = new Panel();
-            picChess = new Panel();
-            picAvatar = new PictureBox();
-            panel3 = new Panel();
-            label1 = new Label();
-            picbMark = new PictureBox();
-            txbPlayerName = new TextBox();
+            pnlPlayer2Name = new Panel();
+            txbPlayer2Name = new TextBox();
+            pictureBox1 = new PictureBox();
+            pnlPlayer1Info = new Panel();
+            proTimer = new ProgressBar();
+            picbMark1 = new PictureBox();
+            txbPlayer1Name = new TextBox();
             menuStrip1 = new MenuStrip();
             mnuChessBoard = new ToolStripMenuItem();
             newGameToolStripMenuItem = new ToolStripMenuItem();
             undoToolStripMenuItem = new ToolStripMenuItem();
             quitToolStripMenuItem = new ToolStripMenuItem();
-            proTimer = new ProgressBar();
-            picChess.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)picAvatar).BeginInit();
-            panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)picbMark).BeginInit();
+            pnlPlayer2Name.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            pnlPlayer1Info.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picbMark1).BeginInit();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // pnlChessBoard
             // 
-            pnlChessBoard.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            pnlChessBoard.BackColor = SystemColors.Control;
-            pnlChessBoard.Location = new Point(14, 39);
-            pnlChessBoard.Margin = new Padding(5, 6, 5, 6);
+            pnlChessBoard.BackColor = Color.Khaki;
+            pnlChessBoard.Location = new Point(319, 28);
+            pnlChessBoard.Margin = new Padding(4, 5, 4, 5);
             pnlChessBoard.Name = "pnlChessBoard";
-            pnlChessBoard.Size = new Size(855, 875);
+            pnlChessBoard.Size = new Size(801, 801);
             pnlChessBoard.TabIndex = 0;
             // 
-            // picChess
+            // pnlPlayer2Name
             // 
-            picChess.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            picChess.Controls.Add(picAvatar);
-            picChess.Location = new Point(920, 39);
-            picChess.Margin = new Padding(5, 6, 5, 6);
-            picChess.Name = "picChess";
-            picChess.Size = new Size(485, 519);
-            picChess.TabIndex = 1;
+            pnlPlayer2Name.BackColor = Color.Transparent;
+            pnlPlayer2Name.Controls.Add(txbPlayer2Name);
+            pnlPlayer2Name.Controls.Add(pictureBox1);
+            pnlPlayer2Name.Dock = DockStyle.Right;
+            pnlPlayer2Name.Location = new Point(1122, 28);
+            pnlPlayer2Name.Margin = new Padding(4, 5, 4, 5);
+            pnlPlayer2Name.Name = "pnlPlayer2Name";
+            pnlPlayer2Name.Size = new Size(314, 800);
+            pnlPlayer2Name.TabIndex = 1;
             // 
-            // picAvatar
+            // txbPlayer2Name
             // 
-            picAvatar.BackColor = SystemColors.Control;
-            picAvatar.BackgroundImageLayout = ImageLayout.Stretch;
-            picAvatar.Location = new Point(-5, 53);
-            picAvatar.Margin = new Padding(5, 6, 5, 6);
-            picAvatar.Name = "picAvatar";
-            picAvatar.Size = new Size(485, 519);
-            picAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
-            picAvatar.TabIndex = 0;
-            picAvatar.TabStop = false;
+            txbPlayer2Name.Location = new Point(51, 318);
+            txbPlayer2Name.Margin = new Padding(4, 5, 4, 5);
+            txbPlayer2Name.Name = "txbPlayer2Name";
+            txbPlayer2Name.ReadOnly = true;
+            txbPlayer2Name.Size = new Size(218, 27);
+            txbPlayer2Name.TabIndex = 8;
             // 
-            // panel3
+            // pictureBox1
             // 
-            panel3.Anchor = AnchorStyles.Right;
-            panel3.BackColor = SystemColors.Control;
-            panel3.Controls.Add(label1);
-            panel3.Controls.Add(picbMark);
-            panel3.Controls.Add(txbPlayerName);
-            panel3.Location = new Point(915, 623);
-            panel3.Margin = new Padding(5, 6, 5, 4);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(490, 347);
-            panel3.TabIndex = 2;
+            pictureBox1.BackColor = SystemColors.Control;
+            pictureBox1.Location = new Point(51, 49);
+            pictureBox1.Margin = new Padding(4, 5, 4, 5);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(218, 207);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
             // 
-            // label1
+            // pnlPlayer1Info
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Mistral", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(112, 437);
-            label1.Margin = new Padding(5, 0, 5, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(255, 38);
-            label1.TabIndex = 5;
-            label1.Text = "Five in a line to win";
+            pnlPlayer1Info.BackColor = Color.Transparent;
+            pnlPlayer1Info.Controls.Add(proTimer);
+            pnlPlayer1Info.Controls.Add(picbMark1);
+            pnlPlayer1Info.Controls.Add(txbPlayer1Name);
+            pnlPlayer1Info.Dock = DockStyle.Left;
+            pnlPlayer1Info.Location = new Point(0, 28);
+            pnlPlayer1Info.Margin = new Padding(4, 5, 4, 3);
+            pnlPlayer1Info.Name = "pnlPlayer1Info";
+            pnlPlayer1Info.Size = new Size(317, 800);
+            pnlPlayer1Info.TabIndex = 2;
             // 
-            // picbMark
+            // proTimer
             // 
-            picbMark.BackColor = SystemColors.Control;
-            picbMark.Location = new Point(3, 6);
-            picbMark.Margin = new Padding(5, 6, 5, 6);
-            picbMark.Name = "picbMark";
-            picbMark.Size = new Size(482, 344);
-            picbMark.SizeMode = PictureBoxSizeMode.StretchImage;
-            picbMark.TabIndex = 2;
-            picbMark.TabStop = false;
+            proTimer.Location = new Point(51, 273);
+            proTimer.Margin = new Padding(2);
+            proTimer.Maximum = 15000;
+            proTimer.Name = "proTimer";
+            proTimer.Size = new Size(218, 27);
+            proTimer.Step = 1;
+            proTimer.Style = ProgressBarStyle.Continuous;
+            proTimer.TabIndex = 7;
             // 
-            // txbPlayerName
+            // picbMark1
             // 
-            txbPlayerName.Location = new Point(38, 375);
-            txbPlayerName.Margin = new Padding(5, 6, 5, 6);
-            txbPlayerName.Name = "txbPlayerName";
-            txbPlayerName.ReadOnly = true;
-            txbPlayerName.Size = new Size(182, 31);
-            txbPlayerName.TabIndex = 0;
+            picbMark1.BackColor = SystemColors.Control;
+            picbMark1.Location = new Point(51, 49);
+            picbMark1.Margin = new Padding(4, 5, 4, 5);
+            picbMark1.Name = "picbMark1";
+            picbMark1.Size = new Size(218, 207);
+            picbMark1.SizeMode = PictureBoxSizeMode.StretchImage;
+            picbMark1.TabIndex = 2;
+            picbMark1.TabStop = false;
+            // 
+            // txbPlayer1Name
+            // 
+            txbPlayer1Name.Location = new Point(51, 318);
+            txbPlayer1Name.Margin = new Padding(4, 5, 4, 5);
+            txbPlayer1Name.Name = "txbPlayer1Name";
+            txbPlayer1Name.ReadOnly = true;
+            txbPlayer1Name.Size = new Size(218, 27);
+            txbPlayer1Name.TabIndex = 0;
             // 
             // menuStrip1
             // 
@@ -132,8 +141,7 @@ namespace Caro3_4.GUI
             menuStrip1.Items.AddRange(new ToolStripItem[] { mnuChessBoard });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Padding = new Padding(7, 2, 0, 2);
-            menuStrip1.Size = new Size(1607, 33);
+            menuStrip1.Size = new Size(1436, 28);
             menuStrip1.TabIndex = 3;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -141,14 +149,14 @@ namespace Caro3_4.GUI
             // 
             mnuChessBoard.DropDownItems.AddRange(new ToolStripItem[] { newGameToolStripMenuItem, undoToolStripMenuItem, quitToolStripMenuItem });
             mnuChessBoard.Name = "mnuChessBoard";
-            mnuChessBoard.Size = new Size(73, 29);
+            mnuChessBoard.Size = new Size(60, 24);
             mnuChessBoard.Text = "Menu";
             // 
             // newGameToolStripMenuItem
             // 
             newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
             newGameToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.N;
-            newGameToolStripMenuItem.Size = new Size(263, 34);
+            newGameToolStripMenuItem.Size = new Size(217, 26);
             newGameToolStripMenuItem.Text = "New game";
             newGameToolStripMenuItem.Click += newGameToolStripMenuItem_Click;
             // 
@@ -156,7 +164,7 @@ namespace Caro3_4.GUI
             // 
             undoToolStripMenuItem.Name = "undoToolStripMenuItem";
             undoToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Z;
-            undoToolStripMenuItem.Size = new Size(263, 34);
+            undoToolStripMenuItem.Size = new Size(217, 26);
             undoToolStripMenuItem.Text = "Undo";
             undoToolStripMenuItem.Click += undoToolStripMenuItem_Click;
             // 
@@ -164,43 +172,35 @@ namespace Caro3_4.GUI
             // 
             quitToolStripMenuItem.Name = "quitToolStripMenuItem";
             quitToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Q;
-            quitToolStripMenuItem.Size = new Size(263, 34);
+            quitToolStripMenuItem.Size = new Size(217, 26);
             quitToolStripMenuItem.Text = "Quit";
             quitToolStripMenuItem.Click += quitToolStripMenuItem_Click;
             // 
-            // proTimer
-            // 
-            proTimer.Location = new Point(918, 580);
-            proTimer.Maximum = 15000;
-            proTimer.Name = "proTimer";
-            proTimer.Size = new Size(314, 34);
-            proTimer.Step = 1;
-            proTimer.Style = ProgressBarStyle.Continuous;
-            proTimer.TabIndex = 7;
-            // 
             // frmChessBoard
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1607, 1050);
-            Controls.Add(proTimer);
-            Controls.Add(panel3);
-            Controls.Add(picChess);
+            BackgroundImage = Properties.Resources.theem1;
+            ClientSize = new Size(1436, 828);
+            Controls.Add(pnlPlayer2Name);
+            Controls.Add(pnlPlayer1Info);
             Controls.Add(pnlChessBoard);
             Controls.Add(menuStrip1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
-            Margin = new Padding(5, 6, 5, 6);
+            Margin = new Padding(4, 5, 4, 5);
             MaximizeBox = false;
             Name = "frmChessBoard";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Caro PvB";
             FormClosing += Form1_FormClosing;
-            picChess.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)picAvatar).EndInit();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)picbMark).EndInit();
+            Load += frmChessBoard_Load;
+            pnlPlayer2Name.ResumeLayout(false);
+            pnlPlayer2Name.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            pnlPlayer1Info.ResumeLayout(false);
+            pnlPlayer1Info.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picbMark1).EndInit();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -210,18 +210,18 @@ namespace Caro3_4.GUI
         #endregion
 
         private System.Windows.Forms.Panel pnlChessBoard;
-        private System.Windows.Forms.Panel picChess;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.PictureBox picAvatar;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox picbMark;
-        private System.Windows.Forms.TextBox txbPlayerName;
+        private System.Windows.Forms.Panel pnlPlayer2Name;
+        private System.Windows.Forms.Panel pnlPlayer1Info;
+        private System.Windows.Forms.PictureBox picbMark1;
+        private System.Windows.Forms.TextBox txbPlayer1Name;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem mnuChessBoard;
         private System.Windows.Forms.ToolStripMenuItem newGameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem undoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
         private ProgressBar proTimer;
+        private TextBox txbPlayer2Name;
+        private PictureBox pictureBox1;
     }
 }
 

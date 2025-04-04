@@ -1,6 +1,6 @@
-﻿// Caro3_4/BLL/TimeManager.cs
+﻿using Caro3_4.Class;
 using System;
-using System.Diagnostics; // Thêm using cho Stopwatch
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace Caro3_4.BLL
@@ -9,8 +9,6 @@ namespace Caro3_4.BLL
     {
         private System.Windows.Forms.Timer timer;
         private Stopwatch stopwatch; // Sử dụng Stopwatch để đo thời gian chính xác
-        public const int TimeLimitMilliseconds = 15000; // Giới hạn thời gian bằng mili giây
-        private const int TimerInterval = 50; // Cập nhật khoảng 20 lần/giây (50ms)
 
         // Thuộc tính trả về thời gian đã trôi qua bằng mili giây
         public long ElapsedMilliseconds => stopwatch.ElapsedMilliseconds;
@@ -23,7 +21,7 @@ namespace Caro3_4.BLL
         {
             stopwatch = new Stopwatch();
             timer = new System.Windows.Forms.Timer();
-            timer.Interval = TimerInterval; // Giảm Interval để cập nhật thường xuyên hơn
+            timer.Interval = Const.TimerInterval; // Giảm Interval để cập nhật thường xuyên hơn
             timer.Tick += Timer_Tick!;
         }
 
@@ -32,7 +30,7 @@ namespace Caro3_4.BLL
             OnTimeChanged(); // Thông báo thay đổi để cập nhật UI
 
             // Kiểm tra nếu hết giờ
-            if (stopwatch.ElapsedMilliseconds >= TimeLimitMilliseconds)
+            if (stopwatch.ElapsedMilliseconds >= Const.TimeLimitMilliseconds)
             {
                 StopTimer(); // Dừng stopwatch và timer
                              // Đảm bảo ElapsedMilliseconds không vượt quá giới hạn khi báo sự kiện

@@ -1,9 +1,8 @@
-﻿// Caro3_4/BLL/WinChecker.cs
-using Caro3_4.Class;
-using Caro3_4.Entity; // Cần nếu Player được dùng, nhưng hiện tại chỉ cần Image
+﻿using Caro3_4.Class;
+using Caro3_4.Entity;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Windows.Forms; // Để dùng List<List<Button>>
+using System.Windows.Forms;
 
 namespace Caro3_4.BLL
 {
@@ -99,37 +98,60 @@ namespace Caro3_4.BLL
             if (startButton.BackgroundImage == null) return 0;
             Image targetMark = startButton.BackgroundImage;
 
-            int count = 1; // Bắt đầu từ chính nút đó
+            int count = 1;
+            bool blockedStart = false;
+            bool blockedEnd = false;
 
-            // Đếm theo hướng (dx, dy)
+            // Kiểm tra theo hướng dương
             for (int i = 1; i < 5; i++)
             {
                 int nextX = point.X + i * dx;
                 int nextY = point.Y + i * dy;
 
-                if (!IsValid(nextX, nextY)) break; // Ra ngoài biên
+                if (!IsValid(nextX, nextY))
+                {
+                    blockedEnd = true;
+                    break;
+                }
 
-                if (matrix[nextY][nextX].BackgroundImage == targetMark)
+                Button nextButton = matrix[nextY][nextX];
+                if (nextButton.BackgroundImage == targetMark)
                     count++;
-                else
-                    break; // Gặp ô trống hoặc quân địch
+                else if (nextButton.BackgroundImage != null) // Quân cờ của đối phương
+                {
+                    blockedEnd = true;
+                    break;
+                }
+                // else: ô trống, tiếp tục
             }
 
-            // Đếm theo hướng ngược lại (-dx, -dy)
+            // Kiểm tra theo hướng âm
             for (int i = 1; i < 5; i++)
             {
                 int nextX = point.X - i * dx;
                 int nextY = point.Y - i * dy;
 
-                if (!IsValid(nextX, nextY)) break; // Ra ngoài biên
+                if (!IsValid(nextX, nextY))
+                {
+                    blockedStart = true;
+                    break;
+                }
 
-                if (matrix[nextY][nextX].BackgroundImage == targetMark)
+                Button nextButton = matrix[nextY][nextX];
+                if (nextButton.BackgroundImage == targetMark)
                     count++;
-                else
-                    break; // Gặp ô trống hoặc quân địch
+                else if (nextButton.BackgroundImage != null)
+                {
+                    blockedStart = true;
+                    break;
+                }
             }
 
-            return count;
+            // Điều kiện thắng: 5 quân liên tiếp VÀ không bị chặn ở cả hai đầu
+            if (count >= 5 && (!blockedStart || !blockedEnd))
+                return 5;
+            else
+                return 0; // Không thắng
         }
 
         // Kiểm tra tọa độ hợp lệ
